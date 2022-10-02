@@ -1,0 +1,136 @@
+def add_data(friend):
+
+    katok.append(None)
+
+    klen=len(katok)
+
+    katok[klen-1]=friend
+
+    
+
+def insert_data(position,friend):
+
+    if position<0 or position>len(katok):
+
+        print("데이터 삽입 범위를 벗어남.")
+
+        return
+
+    katok.append(None)
+
+    klen=len(katok)
+
+    
+
+    for i in range (klen-1,position,-1):
+
+        katok[i]=katok[i-1]
+
+        katok[i-1]=None
+
+        
+
+    katok[position]=friend
+
+    
+
+def delete_data(position):
+
+    if position<0 or position>len(katok):
+
+        print("데이터 삭제 범위를 벗어남.")
+
+        return
+
+    klen=len(katok)
+
+    katok[position]=None
+
+    
+
+    for i in range (position+1,klen):
+
+        katok[i-1]=katok[i]
+
+        katok[i]=None
+
+        
+
+    del(katok[klen-1])
+
+    
+
+def Insertion_Sort(array):
+
+    for a in range(1, len(array)):
+
+        for b in range(a, 0, -1):
+
+            if array[b] < array[b-1]:
+
+                   array[b], array[b-1] = array[b-1], array[b]
+
+            else:
+
+                   break
+
+    return array
+
+ 
+
+ 
+
+ 
+
+katok=[]
+
+select=-1
+
+    
+
+ 
+
+ 
+
+if __name__=="__main__":
+
+    while (select !=3):
+
+        select=int(input("선택(1:추가, 2:삭제, 3:종료)"))
+
+        
+
+        if (select==1):
+
+            data=input("추가할 데이터-->")
+
+            add_data(data)
+
+            print(Insertion_Sort(array))
+
+            
+
+            
+
+        elif (select==2):
+
+            pos=int(input("삭제할 위치-->"))
+
+            delete_data(pos)
+
+            print(Insertion_Sort(array))
+
+            
+
+        elif (select==3):
+
+            print(Insertion_Sort(array))
+
+            exit
+
+        else:
+
+            print("1-4중 하나 선택.")
+
+            continue
+
